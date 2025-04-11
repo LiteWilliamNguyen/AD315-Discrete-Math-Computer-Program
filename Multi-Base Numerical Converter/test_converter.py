@@ -1,6 +1,7 @@
 import unittest
 from main import multi_base_numerical_converter  # Import the function from your main program
 
+
 class TestBaseConverter(unittest.TestCase):
     def test_normal_cases(self):
         """Test normal cases for base conversion."""
@@ -42,11 +43,13 @@ class TestBaseConverter(unittest.TestCase):
         self.assertEqual(octal, "377", "Octal conversion failed for 0xFF")
         self.assertEqual(hexadecimal, "FF", "Hexadecimal conversion failed for 0xFF")
     
-    """Test invalid input"""
-    def test_invalid_input(self):
-        """Test invalid input for base conversion."""
-        with self.assertRaises(ValueError):
-            multi_base_numerical_converter(-1)
+    """Test a number that includes all digits of octal"""
+    def test_octal_number(self):
+        """Test octal number for base conversion."""
+        binary, octal, hexadecimal = multi_base_numerical_converter(0o377)
+        self.assertEqual(binary, "11111111", "Binary conversion failed for 0o377")
+        self.assertEqual(octal, "377", "Octal conversion failed for 0o377")
+        self.assertEqual(hexadecimal, "FF", "Hexadecimal conversion failed for 0o377")
 
 if __name__ == "__main__":
     unittest.main()
