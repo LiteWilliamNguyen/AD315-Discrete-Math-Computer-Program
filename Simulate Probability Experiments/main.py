@@ -13,15 +13,19 @@ def main():
         if choice == "1":
             n = int(input("Enter the number of coin tosses: "))
             coin_toss(n)
+            print(f"Coin toss results: {coin_toss(n)}")
         elif choice == "2":
             n = int(input("Enter the number of die rolls: "))
             die_roll(n)
+            print(f"Die roll results: {die_roll(n)}")
         elif choice == "3":
             n = int(input("Enter the number of card draws: "))
-            drawing_card(n)
+            red_count, black_count = drawing_card(n)
+            print(f"Drawing card results: Red={red_count}, Black={black_count}")
         elif choice == "4":
             n = int(input("Enter the number of coin tosses: "))
-            compound_coin_toss(n)
+            both_heads, at_least_one_heads = compound_coin_toss(n)
+            print(f"Compound coin toss results: Both heads={both_heads}, At least one head={at_least_one_heads}")
         elif choice == "5":
             print("Goodbye!")
             break
