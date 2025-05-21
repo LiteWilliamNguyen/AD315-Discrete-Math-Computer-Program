@@ -53,7 +53,7 @@ print("Probability of having the disease given a negative test result:", probabi
 README generate with Windsurf
 
 Uses:
-Quick estimate with test result value
+* Quick estimate with test result value
 
 Limitation:
 * Assumes prevalence, sensitivity, and specificity are known precisely
